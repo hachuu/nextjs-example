@@ -5,14 +5,26 @@ export const NavBar = () => {
  
 
   const NavBarDiv = styled.div`
+    border-bottom: 1px solid #eaeaea;
   `;
   const NavBarUl = styled.ul`
     display: flex;
   `;
   const NavBarLi = styled.li`
-  display: flex;
+    display: flex;
     flex: 1;
-    font-family: "KyoboHandwriting2020A", sans-serif;
+    a {
+      border-radius: 5px;
+      padding: 0 10px;
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  `;
+  const NavBarA = styled.a`
+  &:hover  {
+    background-color: #f5f5f5;
+  }
   `;
 
 
@@ -21,8 +33,8 @@ export const NavBar = () => {
       <NavBarUl>
         <NavBarLi><Link href={'/'}>Home</Link></NavBarLi>
         <NavBarLi><Link href={'/profile'}>Profile</Link></NavBarLi>
-        <NavBarLi><Link href={'/'}>Detail</Link></NavBarLi>
-        <NavBarLi><Link href={'/'}>Monitoring</Link></NavBarLi>
+        <NavBarLi><Link href={'/detail'}>Detail</Link></NavBarLi>
+        <NavBarLi><Link href={'/monitoring'}>Monitoring</Link></NavBarLi>
       </NavBarUl>
 
     </NavBarDiv>

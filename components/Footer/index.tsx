@@ -14,7 +14,6 @@ export const Footer = () => {
   `;
 
   const FooterA = styled.a`
-    font-family: "KyoboHandwriting2020A", sans-serif;
   `;
 
   const LogoSpan = styled.span`
