@@ -6,8 +6,14 @@ export const NavBar = () => {
 
   const NavBarDiv = styled.div`
     border-bottom: 1px solid #eaeaea;
+    z-index: 5;
+    margin: 70px 0 0 0;
+    // position: fixed;
+    width: 100%;
     
+    background-color: white;
   `;
+
   const NavBarUl = styled.ul`
     display: flex;
     @media (max-width: 768px) {

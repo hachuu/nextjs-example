@@ -17,13 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   `;
 
   const PageDiv = styled.div`
-    min-height: 800px;
+    min-height: 1000px;
     padding: 10px 0;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #f5f5f5;
     @media (max-width: 768px) {
       min-height: 730px;
     }
