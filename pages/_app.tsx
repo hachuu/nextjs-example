@@ -24,6 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      min-height: 730px;
+    }
   `;
 
   return (

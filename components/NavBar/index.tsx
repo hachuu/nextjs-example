@@ -6,9 +6,15 @@ export const NavBar = () => {
 
   const NavBarDiv = styled.div`
     border-bottom: 1px solid #eaeaea;
+    
   `;
   const NavBarUl = styled.ul`
     display: flex;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+    }
   `;
   const NavBarLi = styled.li`
     display: flex;
