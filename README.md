@@ -1,6 +1,6 @@
 # TIL
 1. [ typescript Next ](https://nextjs.org/docs/basic-features/typescript)
-
+2. [ css Flexbox 레이아웃 ](https://jmjmjm.tistory.com/62) 
 
 
 ## library
