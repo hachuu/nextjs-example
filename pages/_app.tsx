@@ -22,8 +22,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     background-color: #f5f5f5;
     @media (max-width: 768px) {
       min-height: 730px;
