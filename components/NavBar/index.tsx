@@ -44,9 +44,9 @@ export const NavBar = () => {
     <NavBarDiv>
       <NavBarUl>
         <NavBarLi><Link href={'/'}>Home</Link></NavBarLi>
-        <NavBarLi><Link href={'/profile'}>Profile</Link></NavBarLi>
-        <NavBarLi><Link href={'/detail'}>Detail</Link></NavBarLi>
-        <NavBarLi><Link href={'/monitoring'}>Monitoring</Link></NavBarLi>
+        <NavBarLi><Link href={'/cargo-track'}>선적 추적</Link></NavBarLi>
+        <NavBarLi><Link href={'/batch-execution-result'}>배치 실행 결과</Link></NavBarLi>
+        <NavBarLi><Link href={'/track-monitor'}>Tracking Monitoring</Link></NavBarLi>
       </NavBarUl>
 
     </NavBarDiv>

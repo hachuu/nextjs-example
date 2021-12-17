@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 
-const Detail: NextPage = () => {
+const BatchResult: NextPage = () => {
   return (
     <div>여기는 상세 화면</div>
   )
 }
 
-export default Detail;
+export default BatchResult;

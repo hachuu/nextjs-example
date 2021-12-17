@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   `;
 
   const PageDiv = styled.div`
-    min-height: 1000px;
+    min-height: 1500px;
     padding: 10px 0;
     flex: 1;
     display: flex;
@@ -35,7 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ContainerDiv>
       <Header></Header>
       <NavBar></NavBar>
-      <PageDiv><Component {...pageProps} /></PageDiv>
+      <PageDiv>
+          <Component {...pageProps} />
+      </PageDiv>
 
       <Footer></Footer>
     </ContainerDiv>
