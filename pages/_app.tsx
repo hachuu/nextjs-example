@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   `;
 
   const PageDiv = styled.div`
+    font-family: 'Cafe24SsurroundAir', sans-serif;
     min-height: 1500px;
     padding: 10px 0;
     flex: 1;
