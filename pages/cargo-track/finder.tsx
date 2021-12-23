@@ -96,11 +96,18 @@ const Finder: NextPage = () => {
   `;
   const BLListDiv =  styled.div`
     flex:  ${(props: {activeDetaillDiv: boolean})  => props.activeDetaillDiv ? '0 0 40%': '1'};
-    border-bottom: 1px solid #929aa7;
     // flex-basis: ${(props: {activeDetaillDiv: boolean})  => props.activeDetaillDiv ? '100%': 'none'};
     // @media (max-width: 768px) {
     //   overflow-y: scroll;
     // }
+  `;
+  const OptionBtnDiv = styled.div`
+    display: flex;
+    padding: 5px;
+    @media (max-width: 768px) {
+      margin: 0 10px 0 10px;
+      // width: 100%;
+    }
   `;
 
   const ListTableDiv = styled.div`
@@ -156,9 +163,7 @@ const Finder: NextPage = () => {
   `;
 
   const ListDetailButton = styled.button`
-    &: hover {
-      cursor: pointer;
-    }
+    margin: 0 10px 0 0;
   `;
   const BLListDetailDiv =  styled.div`
     flex: 0 0 40%;
@@ -256,6 +261,10 @@ const Finder: NextPage = () => {
         <BLResultDiv activeDetaillDiv={activeDetaillDiv}>
           <BLListDiv activeDetaillDiv={activeDetaillDiv}>
             리스트
+            <OptionBtnDiv>
+              <ListDetailButton>선택 해제</ListDetailButton>
+              <ListDetailButton>수집 메세지 발송</ListDetailButton>
+            </OptionBtnDiv>
             <ListTableDiv>
               <TableHeadDiv>
                 <TableHeadItemDiv flexValue={0.2}>
@@ -291,9 +300,9 @@ const Finder: NextPage = () => {
                     2021-12-14T01:24:04.993931
                   </TableBodyListItemDiv>
                   <TableBodyListItemDiv flexValue={1}>
-                    <ListDetailButton onClick={() => setActiveDetaillDiv(true)}>
+                    <button onClick={() => setActiveDetaillDiv(true)}>
                       상세 조회
-                    </ListDetailButton>
+                    </button>
                   </TableBodyListItemDiv>
                 </TableBodyListDiv>
 
@@ -318,9 +327,9 @@ const Finder: NextPage = () => {
                     2021-12-14T01:24:04.993931
                   </TableBodyListItemDiv>
                   <TableBodyListItemDiv flexValue={1}>
-                    <ListDetailButton onClick={() => setActiveDetaillDiv(true)}>
+                    <button onClick={() => setActiveDetaillDiv(true)}>
                       상세 조회
-                    </ListDetailButton>
+                    </button>
                   </TableBodyListItemDiv>
                 </TableBodyListDiv>
                 <TableBodyListDiv>
@@ -344,9 +353,9 @@ const Finder: NextPage = () => {
                     2021-12-14T01:24:04.993931
                   </TableBodyListItemDiv>
                   <TableBodyListItemDiv flexValue={1}>
-                    <ListDetailButton onClick={() => setActiveDetaillDiv(true)}>
+                    <button onClick={() => setActiveDetaillDiv(true)}>
                       상세 조회
-                    </ListDetailButton>
+                    </button>
                   </TableBodyListItemDiv>
                 </TableBodyListDiv>
               </TableBodyDiv>
