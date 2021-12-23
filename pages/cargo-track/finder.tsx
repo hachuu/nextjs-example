@@ -22,7 +22,7 @@ const Finder: NextPage = () => {
   `;
 
   const TabUl = styled.ul`
-    width: 50%;
+    width: 40%;
     padding: 0 50px;
     @media (max-width: 768px) {
       width: 100%;
@@ -36,7 +36,7 @@ const Finder: NextPage = () => {
     ({ active }) => css`
       padding: 16px 10px;
       display: inline-block;
-      width: 50%;
+      width: 40%;
       border-radius: 6px 6px 0 0;
       border: 1px solid #929aa7;
       cursor: pointer;
@@ -91,7 +91,7 @@ const Finder: NextPage = () => {
     }
   `;
   const BLListDiv =  styled.div`
-    flex: ${(props: {activeDetaillDiv: boolean})  => props.activeDetaillDiv ? '0 0 30%': '0 0 100%'};
+    flex:  ${(props: {activeDetaillDiv: boolean})  => props.activeDetaillDiv ? '0 0 40%': '1'};
     // flex-basis: ${(props: {activeDetaillDiv: boolean})  => props.activeDetaillDiv ? '100%': 'none'};
     // @media (max-width: 768px) {
     //   overflow-y: scroll;
@@ -113,8 +113,7 @@ const Finder: NextPage = () => {
   const TableHeadItemDiv = styled.div`
     padding: 10px;
     display: flex;
-    flex: 1;
-    flex-grow:1;
+    flex: ${((props: {flexValue: number})  => props.flexValue)};
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #929aa7;
@@ -135,8 +134,7 @@ const Finder: NextPage = () => {
   const TableBodyListItemDiv = styled.div`
     padding: 10px;
     display: flex;
-    flex: 1;
-    flex-grow:1;
+    flex: ${((props: {flexValue: number})  => props.flexValue)};
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #929aa7;
@@ -144,8 +142,6 @@ const Finder: NextPage = () => {
     overflow-wrap: break-word;
     @media (max-width: 768px) {
       width: 14%;
-      justify-content: center;
-      align-items: center;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
@@ -158,7 +154,11 @@ const Finder: NextPage = () => {
 
     `;
   const BLListDetailDiv =  styled.div`
-    flex: 0 0 30%;
+    flex: 0 0 40%;
+    margin-left: auto;
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
   `;
 
 
@@ -228,49 +228,50 @@ const Finder: NextPage = () => {
             <ListTableDiv>
 
               <TableHeadDiv>
-                <TableHeadItemDiv><input type={'checkbox'}></input></TableHeadItemDiv>
-                <TableHeadItemDiv>사용자</TableHeadItemDiv>
-                <TableHeadItemDiv>선사코드</TableHeadItemDiv>
-                <TableHeadItemDiv>B/L번호</TableHeadItemDiv>
-                <TableHeadItemDiv>상태값</TableHeadItemDiv>
-                <TableHeadItemDiv>추적 시간</TableHeadItemDiv>
-                <TableHeadItemDiv>입력 시간</TableHeadItemDiv>
-                <TableHeadItemDiv>조회</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={0.2}><input type={'checkbox'}></input></TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>사용자</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>선사코드</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>B/L번호</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>상태값</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>추적 시간</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>입력 시간</TableHeadItemDiv>
+                <TableHeadItemDiv flexValue={1}>조회</TableHeadItemDiv>
               </TableHeadDiv>
               <TableBodyDiv>
                 <TableBodyListDiv>
-                  <TableBodyListItemDiv><input type={'checkbox'}></input></TableBodyListItemDiv>
-                  <TableBodyListItemDiv>sw@tradlinx.com</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONEYBOGB11147800</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>COMPLETE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={0.2}><input type={'checkbox'}></input></TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>sw@tradlinx.com</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONEYBOGB11147800</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>COMPLETE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>
+                    <ListDetailButton onClick={()=>setActiveDetaillDiv(true)}>상세 조회</ListDetailButton>
+                    </TableBodyListItemDiv>
+                </TableBodyListDiv>
+
+                <TableBodyListDiv>
+                  <TableBodyListItemDiv flexValue={0.2}><input type={'checkbox'}></input></TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>sw@tradlinx.com</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONEYBOGB11147800</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>COMPLETE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>
                     <ListDetailButton onClick={()=>setActiveDetaillDiv(true)}>상세 조회</ListDetailButton>
                     </TableBodyListItemDiv>
                 </TableBodyListDiv>
                 <TableBodyListDiv>
-                <TableBodyListItemDiv><input type={'checkbox'}></input></TableBodyListItemDiv>
-                  <TableBodyListItemDiv>sw@tradlinx.com</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONEYBOGB11147800</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>COMPLETE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>
-                    <ListDetailButton onClick={()=>setActiveDetaillDiv(true)}>상세 조회</ListDetailButton>
-                    </TableBodyListItemDiv>
-                </TableBodyListDiv>
-                <TableBodyListDiv>
-                <TableBodyListItemDiv><input type={'checkbox'}></input></TableBodyListItemDiv>
-                  <TableBodyListItemDiv>sw@tradlinx.com</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>ONEYBOGB11147800</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>COMPLETE</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
-                  <TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={0.2}><input type={'checkbox'}></input></TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>sw@tradlinx.com</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>ONEYBOGB11147800</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>COMPLETE</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-01T16:00:48.362257</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>2021-12-14T01:24:04.993931</TableBodyListItemDiv>
+                  <TableBodyListItemDiv flexValue={1}>
                     <ListDetailButton onClick={()=>setActiveDetaillDiv(true)}>상세 조회</ListDetailButton>
                     </TableBodyListItemDiv>
                 </TableBodyListDiv>
@@ -281,7 +282,31 @@ const Finder: NextPage = () => {
           {
             activeDetaillDiv && 
             <BLListDetailDiv>여긴 상세
-              <img src="https://cdn-icons-png.flaticon.com/512/151/151882.png" width="12px" height="12px" alt="닫기  무료 아이콘" title="닫기 무료 아이콘" onClick={()=>setActiveDetaillDiv(false)}></img></BLListDetailDiv>
+              <img src="https://cdn-icons-png.flaticon.com/512/151/151882.png" width="12px" height="12px" alt="닫기  무료 아이콘" title="닫기 무료 아이콘" onClick={()=>setActiveDetaillDiv(false)}></img>
+              <ListTableDiv>
+
+                <TableHeadDiv>
+                  <TableHeadItemDiv flexValue={0.7}>ID</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>선박명</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>출발항</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>도착항</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>ETD</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>ATD</TableHeadItemDiv>
+                  <TableHeadItemDiv flexValue={1}>ATA</TableHeadItemDiv>
+                </TableHeadDiv>
+                <TableBodyDiv>
+                  <TableBodyListDiv>
+                    <TableBodyListItemDiv flexValue={0.7}>21531741</TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}>HYUNDAIHONOUR</TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}>Cartagena</TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}>New Busan</TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}></TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}>2021-10-24T18:30:00</TableBodyListItemDiv>
+                    <TableBodyListItemDiv flexValue={1}>2021-11-16T20:00:00</TableBodyListItemDiv>
+                  </TableBodyListDiv>
+                </TableBodyDiv>
+              </ListTableDiv>
+            </BLListDetailDiv>
           }
         </BLResultDiv>
       </PageContent>
