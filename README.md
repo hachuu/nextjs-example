@@ -1,6 +1,6 @@
 # TIL
 1. [ typescript Next ](https://nextjs.org/docs/basic-features/typescript)
-
+2. [ next js 배포 ](https://taeny.dev/javascript/nextjs-with-deployment-platform/)
 
 
 ## library
