@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { Head } from 'next/document';
 import styled from 'styled-components';
 import { Footer } from '../components/Footer';
 import { NavBar } from '../components/NavBar';
