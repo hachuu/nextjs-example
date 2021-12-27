@@ -90,7 +90,6 @@ const Finder: NextPage = () => {
 
   const BLResultDiv = styled.div`
     justify-content: space-between;
-
     border-top: 1px solid #eaeaea;
     padding: 10px;
     margin: 30px 50px;

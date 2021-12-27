@@ -9,16 +9,17 @@ export const UnTrackingBLSearch = () => {
   const UnTrackingBLSearchDiv = styled.div`
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
   `;
 
   const BLSearchDiv = styled.div`
     display: flex;
     flex-direction: row;
     background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 50px;
-    margin: 20px 0 0 0;
+    margin: 0 50px;
   `;
+
   const BLInputDiv = styled.div`
     border: 1px solid #929aa7;
     margin: 0 0 0 20px;
@@ -114,6 +115,10 @@ export const UnTrackingBLSearch = () => {
     }
   `;
 
+  const BLListDiv = styled.div`
+    flex: 1;
+  `;
+
   const ListTableDiv = styled.div`
     box-size: border-box;
     border: 1px solid #929aa7;
@@ -199,51 +204,53 @@ export const UnTrackingBLSearch = () => {
         <SearchBtn>조회</SearchBtn>
       </BLSearchDiv>
       <BLResultDiv>
-        <ListTableDiv>
-          <TableHeadDiv type={"list"}>
-            <TableHeadItemDiv flexValue={0.2}>
-              <input type={"checkbox"}></input>
-            </TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>사용자</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>선사코드</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>B/L번호</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>상태값</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>추적 시간</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>입력 시간</TableHeadItemDiv>
-            <TableHeadItemDiv flexValue={1}>조회</TableHeadItemDiv>
-          </TableHeadDiv>
-          <TableBodyDiv>
-            <TableBodyListDiv>
-              <TableBodyListItemDiv flexValue={0.2}>
+        <BLListDiv>
+          <ListTableDiv>
+            <TableHeadDiv type={"list"}>
+              <TableHeadItemDiv flexValue={0.2}>
                 <input type={"checkbox"}></input>
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>
-                shyshy0621@gmail.com
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>ONE</TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>
-                ONETWOTHREESTEP0
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>
-                COMPLETE
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>
-                2021-12-01T16:00:48.362257
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv flexValue={1}>
-                2021-12-14T01:24:04.993931
-              </TableBodyListItemDiv>
-              <TableBodyListItemDiv
-                flexValue={1}
-                onClick={() => setActiveDetaillDiv(!activeDetaillDiv)}
-              >
-                <TableBodyListDetailBtnDiv>
-                  상세 조회 ▼
-                </TableBodyListDetailBtnDiv>
-              </TableBodyListItemDiv>
-            </TableBodyListDiv>
-          </TableBodyDiv>
-        </ListTableDiv>
+              </TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>사용자</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>선사코드</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>B/L번호</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>상태값</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>추적 시간</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>입력 시간</TableHeadItemDiv>
+              <TableHeadItemDiv flexValue={1}>조회</TableHeadItemDiv>
+            </TableHeadDiv>
+            <TableBodyDiv>
+              <TableBodyListDiv>
+                <TableBodyListItemDiv flexValue={0.2}>
+                  <input type={"checkbox"}></input>
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>
+                  shyshy0621@gmail.com
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>ONE</TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>
+                  ONETWOTHREESTEP0
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>
+                  COMPLETE
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>
+                  2021-12-01T16:00:48.362257
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv flexValue={1}>
+                  2021-12-14T01:24:04.993931
+                </TableBodyListItemDiv>
+                <TableBodyListItemDiv
+                  flexValue={1}
+                  onClick={() => setActiveDetaillDiv(!activeDetaillDiv)}
+                >
+                  <TableBodyListDetailBtnDiv>
+                    상세 조회 ▼
+                  </TableBodyListDetailBtnDiv>
+                </TableBodyListItemDiv>
+              </TableBodyListDiv>
+            </TableBodyDiv>
+          </ListTableDiv>
+        </BLListDiv>
       </BLResultDiv>
     </UnTrackingBLSearchDiv>
   );
