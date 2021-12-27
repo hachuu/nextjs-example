@@ -69,6 +69,7 @@ const Finder: NextPage = () => {
     width: 230px;
     display: flex;
     justify-content: space-between;
+    border-radius: 5px;
     @media (max-width: 768px) {
       margin: 0 10px 0 10px;
       // width: 100%;
