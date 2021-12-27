@@ -16,7 +16,7 @@ export const UnTrackingBLSearch = () => {
     flex-direction: row;
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 50px;
     margin: 20px 0 0 0;
   `;
   const BLInputDiv = styled.div`
