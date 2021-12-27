@@ -7,7 +7,7 @@ const Finder: NextPage = () => {
   const [trackingYactive, setTrackingYactive] = useState(true);
   const [activeDetaillDiv, setActiveDetaillDiv] = useState(false);
 
-  const PageDiv = styled.div`
+  const FinderPageDiv = styled.div`
     margin: 0 20px;
     background: white;
   `;
@@ -219,7 +219,7 @@ const Finder: NextPage = () => {
   `;
 
   return (
-    <PageDiv>
+    <FinderPageDiv>
       <PageTab>
         {/* <></> */}
         <TabInput id="tab1" name="tab-control" type="radio"></TabInput>
@@ -600,7 +600,7 @@ const Finder: NextPage = () => {
           )
         }
       </PageContent>
-    </PageDiv>
+    </FinderPageDiv>
   );
 };
 export default Finder;

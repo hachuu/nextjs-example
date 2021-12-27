@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const UnTrackingBLSearch = () => {
   const [selectActive, setSelectActive] = useState(false);
+  const [lineCd, setLineCd] = useState("");
   const [activeDetaillDiv, setActiveDetaillDiv] = useState(false);
+  const [lineCdList, setLineCdList] = useState<string[]>([]);
 
   const UnTrackingBLSearchDiv = styled.div`
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -27,6 +29,7 @@ export const UnTrackingBLSearch = () => {
     display: flex;
     justify-content: space-between;
     border-radius: 5px;
+    width: ${(props: { width: string }) => props.width};
     @media (max-width: 768px) {
       margin: 0 10px 0 10px;
       // width: 100%;
@@ -37,6 +40,14 @@ export const UnTrackingBLSearch = () => {
     width: 100%;
     border: none;
     justify-content: space-between;
+  `;
+
+  const TimeInputText = styled.span`
+    font-size: 12px;
+    // center
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   const SelectBoxDiv = styled.div`
@@ -53,7 +64,7 @@ export const UnTrackingBLSearch = () => {
       display: block;
       height: 100%;
       position: absolute;
-      top: ${(props: { active: boolean }) => (props.active ? "-3px" : "4px;")};
+      top: ${(props: { active: boolean }) => (props.active ? "-6px" : "5px;")};
       right: 10px;
       transform: ${(props: { active: boolean }) =>
         props.active ? "rotate(180deg)" : "rotate(0deg)"};
@@ -73,18 +84,19 @@ export const UnTrackingBLSearch = () => {
 
   const OptionUl = styled.ul`
     position: absolute;
-    top: 28px;
+    top: 18px;
     left: 0;
     width: 100%;
     background: #03a9f4;
     color: #fff;
     list-style-type: none;
     padding: 0;
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     overflow: hidden;
     max-height: ${(props: { active: boolean }) =>
-      props.active ? "500px" : "0"};
+      props.active ? "200px" : "0"};
     transition: 0.3s ease-in;
+    overflow-y: scroll;
   `;
 
   const OptionItemLi = styled.li`
@@ -181,26 +193,33 @@ export const UnTrackingBLSearch = () => {
     }
   `;
 
+  useEffect(() => {
+    setLineCdList(["ANL","APL","CKL","CMA","CNC","COA","DJS","EMC","ESL","GSL","HAS","HLC","HMM","HSD","KMD","MAE","MCC","MSC","NSS","ONE","OOL","PAN","PCL","PCS","PIL","SFM","SIT","SKR","SML","SNT","TSL","WHL","YML","ZIM","HSL","ALL"]);
+  }, []);
+
   return (
     <UnTrackingBLSearchDiv>
       <BLSearchDiv>
-        <SelectBoxDiv active={selectActive}>
-          <SelectButton onClick={() => setSelectActive(!selectActive)}>
-            ALL
+        <SelectBoxDiv active={selectActive} onClick={() => setSelectActive(!selectActive)}>
+          <SelectButton>
+            {lineCd || 'ALL'}
           </SelectButton>
           <OptionUl active={selectActive}>
-            <OptionItemLi>apple</OptionItemLi>
-            <OptionItemLi>orange</OptionItemLi>
-            <OptionItemLi>grape</OptionItemLi>
-            <OptionItemLi>melon</OptionItemLi>
+            {
+              lineCdList && lineCdList.map((item: string, index: number) => {
+                return <OptionItemLi key={item+index} onClick={()=>setLineCd(item)}>{item}</OptionItemLi>
+              })
+            }
           </OptionUl>
         </SelectBoxDiv>
-        <BLInputDiv>
+        <BLInputDiv width={'150px'}>
           <BLInput placeholder="유저 아이디"></BLInput>
         </BLInputDiv>
-        <BLInputDiv>
-          <BLInput placeholder="유저 아이디"></BLInput>
+        <BLInputDiv width={'60px'}>
+          <BLInput placeholder="시간" type={'number'}></BLInput>
+          {/* value={6} onChange={(e) => {handleChange(e, data.idx)}} */}
         </BLInputDiv>
+        <TimeInputText>시간 이상 업데이트 되지 않은 B/L</TimeInputText>
         <SearchBtn>조회</SearchBtn>
       </BLSearchDiv>
       <BLResultDiv>
