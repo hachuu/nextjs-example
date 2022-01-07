@@ -54,6 +54,8 @@ export const NavBar = () => {
     display: flex;
     flex: 1;
     margin: 10px;
+    
+    font-weight: ${(props: { titleBold: boolean }) => props.titleBold ? 'bold' : 'normal'};
     a {
       border-radius: 5px;
       padding: 0 10px;
@@ -110,14 +112,17 @@ export const NavBar = () => {
           <SubRowItemDiv></SubRowItemDiv>
           <SubRowItemRealDiv>
             <NavSubUl>
-              <NavSubLi>
-                <Link href={"/cargo-track"}><b>선적 추적</b></Link>
+              <NavSubLi titleBold={true}>
+                <Link href={"/cargo-track"}>선적 추적</Link>
               </NavSubLi>
-              <NavSubLi>
+              <NavSubLi titleBold={false}>
                 <Link href={"/cargo-track/finder"}>조회</Link>
               </NavSubLi>
-              <NavSubLi>
+              <NavSubLi titleBold={false}>
                 <Link href={"/cargo-track/collect-management"}>수집</Link>
+              </NavSubLi>
+              <NavSubLi titleBold={false}>
+                <Link href={"/cargo-track/"}>데이터 처리 결과</Link>
               </NavSubLi>
             </NavSubUl>
           </SubRowItemRealDiv>
