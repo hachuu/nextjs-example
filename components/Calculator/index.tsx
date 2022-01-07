@@ -105,6 +105,7 @@ const Calculate = () => {
     setNumber(0);
   }
   const onReset = () => {
+    if (list.length === 0) return;
     setList([]);
     setNumber(0);
   }
