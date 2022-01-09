@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
-import { useMemo, useState } from 'react';
-import styled from 'styled-components';
-
+import type { NextPage } from "next";
+import { useMemo, useState } from "react";
+import styled from "styled-components";
 
 const CalculateDiv = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -55,8 +54,8 @@ const NumberListUl = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  list-style:none;
-`;  
+  list-style: none;
+`;
 
 const NumberListLi = styled.li`
   span {
@@ -64,12 +63,12 @@ const NumberListLi = styled.li`
     font-weight: bold;
     margin: 0 0 0 20px;
   }
-`;  
+`;
 
 const CalculateAvgDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  list-style:none;
+  list-style: none;
   margin: 0 30px 0 30px;
   padding: 0 10px 0 10px;
 `;
@@ -89,12 +88,11 @@ const ResetButton = styled.button`
 
 const getAverage = (numbers: number[]) => {
   if (numbers.length === 0) return 0;
-  const sum = numbers.reduce((acc, curr) => acc + curr, 0)
-  return sum / numbers.length
-}
+  const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  return sum / numbers.length;
+};
 
 const Calculate = () => {
-
   const [list, setList] = useState<number[]>([]);
   const [number, setNumber] = useState(0);
 
@@ -103,35 +101,41 @@ const Calculate = () => {
     const newList = [...list, number];
     setList(newList);
     setNumber(0);
-  }
+  };
   const onReset = () => {
     if (list.length === 0) return;
     setList([]);
     setNumber(0);
-  }
+  };
 
-  const avg = useMemo (() => getAverage(list), [list]);
+  const avg = useMemo(() => getAverage(list), [list]);
 
   return (
     <>
-    <CalculateDiv>
-      <CalculateTitle>계산기</CalculateTitle>
-      <CalculateInputDiv>
-        <CalculateInput value={number} onChange={(e) => setNumber(+e.target.value)} type={'number'}/>
-        <AddButton onClick={onInsert}>추가</AddButton>
-      </CalculateInputDiv>
-      <NumberListUl>
-        {list.map((value, idx) => (
-          <NumberListLi key={idx}><span>{idx + 1}.</span> {value}</NumberListLi>))}
-      </NumberListUl>
-      <CalculateAvgDiv>
-        <b>평균값: </b> {avg}
-        <ResetButton onClick={onReset}>초기화하기</ResetButton>
-      </CalculateAvgDiv>
-    </CalculateDiv>
+      <CalculateDiv>
+        <CalculateTitle>계산기</CalculateTitle>
+        <CalculateInputDiv>
+          <CalculateInput
+            value={number}
+            onChange={(e) => setNumber(+e.target.value)}
+            type={"number"}
+          />
+          <AddButton onClick={onInsert}>추가</AddButton>
+        </CalculateInputDiv>
+        <NumberListUl>
+          {list.map((value, idx) => (
+            <NumberListLi key={idx}>
+              <span>{idx + 1}.</span> {value}
+            </NumberListLi>
+          ))}
+        </NumberListUl>
+        <CalculateAvgDiv>
+          <b>평균값: </b> {avg}
+          <ResetButton onClick={onReset}>초기화하기</ResetButton>
+        </CalculateAvgDiv>
+      </CalculateDiv>
     </>
+  );
+};
 
-  )
-}
-
-export default Calculate
+export default Calculate;
